@@ -1,0 +1,8 @@
+Private Sub CommandButton1_Click()
+    sonsatir = ActiveCell.Row 'sonsatir numarasını al
+    Range("A" & sonsatir & ":" & "I" & sonsatir).SpecialCells(xlCellTypeVisible).Select 'filtre uygulandıysa sadece belirtilen aralıktaki görünür hücreleri seç
+    Selection.Interior.ColorIndex = 36 ' seçili satırları sarıya boya
+    Range("B" & sonsatir).Select '
+    Selection.Copy 
+    Cells(sonsatir, "ES") = Format(Now, "dd.mm.yyyy hh:mm") ' belirtilen satıra tarih saat ekle
+End Sub
